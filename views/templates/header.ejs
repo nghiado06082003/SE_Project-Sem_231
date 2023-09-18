@@ -1,0 +1,35 @@
+<!-- Navbar & Hero Start -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+  <a href="" class="navbar-brand p-0">
+    <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>SIMBSC</h1>
+    <!-- <img src="img/logo.png" alt="Logo"> -->
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <span class="fa fa-bars"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto py-0 pe-4">
+      <a href="/homepage" class="nav-item nav-link">Trang chủ</a>
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Về hệ thống</a>
+        <div class="dropdown-menu m-0">
+          <a href="/about/system" class="dropdown-item">Thông tin</a>
+          <a href="/about/team" class="dropdown-item">Nhóm quản trị</a>
+        </div>
+      </div>
+      <% if (userID) { %>
+      <a href="/print" class="nav-item nav-link">In ấn</a>
+      <a href="/contact" class="nav-item nav-link">Phản hồi</a>
+      <% if (role == "admin") { %>
+      <a href="/statistic" class="nav-item nav-link">Thống kê</a>
+      <% } %>
+      <a href="/signout" class="nav-item nav-link">Đăng xuất</a>
+      <% } %>
+    </div>
+    <% if (userID) { %>
+    <a href="/profiles" class="btn btn-primary py-2 px-4"><%- name %></a>
+    <% } else { %>
+    <a href="/signin" class="btn btn-primary py-2 px-4">Đăng nhập</a>
+    <% } %>
+  </div>
+</nav>
